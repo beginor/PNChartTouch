@@ -18,14 +18,17 @@ namespace PNChart {
     public partial interface PNChartDelegate {
 
         [Export ("userClickedOnLinePoint:lineIndex:")]
-        void LineIndex (PointF point, int lineIndex);
+        void UserClicked (PointF point, int lineIndex);
 
         [Export ("userClickedOnLineKeyPoint:lineIndex:andPointIndex:")]
-        void LineIndex (PointF point, int lineIndex, int pointIndex);
+        void UserClicked (PointF point, int lineIndex, int pointIndex);
     }
 
     [BaseType (typeof (UIView))]
     public partial interface PNLineChart {
+
+        [Export("initWithFrame:")]
+        IntPtr Constructor(RectangleF frame);
 
         [Export ("strokeChart")]
         void StrokeChart ();
@@ -99,6 +102,9 @@ namespace PNChart {
     [BaseType (typeof (UIView))]
     public partial interface PNBarChart {
 
+        [Export("initWithFrame:")]
+        IntPtr Constructor(RectangleF frame);
+
         [Export ("strokeChart")]
         void StrokeChart ();
 
@@ -109,7 +115,7 @@ namespace PNChart {
         string [] YLabels { get; set; }
 
         [Export ("yValues", ArgumentSemantic.Retain)]
-        float [] YValues { get; set; }
+        NSNumber [] YValues { get; set; }
 
         [Export ("xLabelWidth")]
         float XLabelWidth { get; set; }
@@ -121,7 +127,7 @@ namespace PNChart {
         UIColor StrokeColor { get; set; }
 
         [Export ("strokeColors", ArgumentSemantic.Retain)]
-        PNColor [] StrokeColors { get; set; }
+        UIColor [] StrokeColors { get; set; }
 
         [Export ("barBackgroundColor", ArgumentSemantic.Retain)]
         UIColor BarBackgroundColor { get; set; }

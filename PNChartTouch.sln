@@ -3,18 +3,54 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PNChartBindings", "PNChartBindings\PNChartBindings.csproj", "{FBA13003-C906-4929-AE90-F1746C99A9F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PNChartDemos", "PNChartDemos\PNChartDemos.csproj", "{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Release|iPhone.Build.0 = Release|iPhone
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0D6E4E60-DD10-45A9-8E87-20C9F835B9B7}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.AppStore|iPhone.Build.0 = Debug|Any CPU
 		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Release|iPhone.Build.0 = Release|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FBA13003-C906-4929-AE90-F1746C99A9F9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = PNChartBindings\PNChartBindings.csproj
+		StartupItem = PNChartDemos\PNChartDemos.csproj
 	EndGlobalSection
 EndGlobal
