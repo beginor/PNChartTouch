@@ -1,0 +1,6 @@
+[submodule "PNChart/PNChart"]
+	path = PNChart/PNChart
+	url = https://github.com/kevinzhow/PNChart.git
+[submodule "PNChart/UICountingLabel"]
+	path = PNChart/UICountingLabel
+	url = https://github.com/dataxpress/UICountingLabel.git
