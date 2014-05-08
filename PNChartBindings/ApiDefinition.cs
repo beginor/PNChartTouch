@@ -18,10 +18,21 @@ namespace PNChart {
     public partial interface PNChartDelegate {
 
         [Export ("userClickedOnLinePoint:lineIndex:")]
-        void UserClicked (PointF point, int lineIndex);
+        void UserClickedOnLine (PointF point, int lineIndex);
 
         [Export ("userClickedOnLineKeyPoint:lineIndex:andPointIndex:")]
-        void UserClicked (PointF point, int lineIndex, int pointIndex);
+        void UserClickedOnLinePoint (PointF point, int lineIndex, int pointIndex);
+
+        [Export ("userClickedOnBarCharIndex:")]
+        void UserClickedOnBar(int barIndex);
+    }
+
+    [BaseType (typeof(UILabel))]
+    public partial interface PNChartLabel {
+
+        [Export("initWithFrame:")]
+        IntPtr Constructor(RectangleF frame);
+
     }
 
     [BaseType (typeof (UIView))]
@@ -76,6 +87,8 @@ namespace PNChart {
         bool ShowLabel { get; set; }
     }
 
+    public delegate PNLineChartDataItem LCLineChartDataGetter(uint item);
+
     [BaseType (typeof (NSObject))]
     public partial interface PNLineChartData {
 
@@ -100,9 +113,34 @@ namespace PNChart {
     }
 
     [BaseType (typeof (UIView))]
+    public partial interface PNBar {
+
+        [Export ("initWithFrame:")]
+        IntPtr Constructor(RectangleF frame);
+
+        [Export ("rollBack")]
+        void RollBack();
+
+        [Export ("grade")]
+        float Grade { get; set; }
+
+        [Export ("chartLine")]
+        CAShapeLayer ChartLine { get; set; }
+
+        [Export ("barColor")]
+        UIColor BarColor { get; set; }
+
+        [Export ("barRadius")]
+        float BarRadius { get; set; }
+
+    }
+
+    public delegate NSString PNyLabelFromatter (float yLabelValue);
+
+    [BaseType (typeof (UIView))]
     public partial interface PNBarChart {
 
-        [Export("initWithFrame:")]
+        [Export ("initWithFrame:")]
         IntPtr Constructor(RectangleF frame);
 
         [Export ("strokeChart")]
@@ -129,11 +167,56 @@ namespace PNChart {
         [Export ("strokeColors", ArgumentSemantic.Retain)]
         UIColor [] StrokeColors { get; set; }
 
-        [Export ("barBackgroundColor", ArgumentSemantic.Retain)]
-        UIColor BarBackgroundColor { get; set; }
+        [Export ("yChartLabelWidth")]
+        float YChartLabelWidth { get; set; }
+
+        [Export ("yLabelFormatter", ArgumentSemantic.Copy)]
+        PNyLabelFromatter YLabelFormatter { get; set; }
+
+        [Export ("chartMargin")]
+        float ChartMargin { get; set; }
 
         [Export ("showLabel")]
         bool ShowLabel { get; set; }
+
+        [Export ("showChartBorder")]
+        bool ShowChartBorder { get; set; }
+
+        [Export ("chartBottomLine")]
+        CAShapeLayer ChartBottomLine { get; set; }
+
+        [Export ("chartLeftLine")]
+        CAShapeLayer ChartLeftLine { get; set; }
+
+        [Export ("barRadius")]
+        float BarRadius { get; set; }
+
+        [Export ("barWidth")]
+        float BarWidth { get; set; }
+
+        [Export ("labelMarginTop")]
+        float LabelMarginTop { get; set; }
+
+        [Export ("barBackgroundColor", ArgumentSemantic.Retain)]
+        UIColor BarBackgroundColor { get; set; }
+
+        [Export ("labelTextColor")]
+        UIColor LabelTextColor { get; set; }
+
+        [Export ("labelFont")]
+        UIFont LabelFont { get; set; }
+
+        [Export ("xLabelSkip")]
+        int XLabelSkip { get; set; }
+
+        [Export ("yLabelSum")]
+        int YLabelSum { get; set; }
+
+        [Export ("yMaxValue")]
+        float YMaxValue { get; set; }
+
+        [Export ("delegate", ArgumentSemantic.Retain)]
+        PNChartDelegate Delegate { get; set; }
     }
 
     [BaseType (typeof (UIView))]
@@ -142,8 +225,8 @@ namespace PNChart {
         [Export ("strokeChart")]
         void StrokeChart ();
 
-        [Export ("initWithFrame:andTotal:andCurrent:andClockwise:")]
-        IntPtr Constructor (RectangleF frame, NSNumber total, NSNumber current, bool clockwise);
+        [Export ("initWithFrame:andTotal:andCurrent:andClockwise:andShadow:")]
+        IntPtr Constructor (RectangleF frame, NSNumber total, NSNumber current, bool clockwise, bool hasBackgroundShadow);
 
         [Export ("strokeColor", ArgumentSemantic.Retain)]
         UIColor StrokeColor { get; set; }
@@ -170,6 +253,51 @@ namespace PNChart {
         CAShapeLayer CircleBG { get; set; }
     }
 
-    public delegate PNLineChartDataItem LCLineChartDataGetter(uint item);
+    [BaseType (typeof (NSObject))]
+    public partial interface PNPieChartDataItem {
+
+        [Static, Export ("dataItemWithValue:color:")]
+        PNPieChartDataItem From(float value, UIColor color);
+
+        [Static, Export ("dataItemWithValue:color:description:")]
+        PNPieChartDataItem From(float value, UIColor color, string description);
+
+        [Export ("value")]
+        float Value { get; }
+
+        [Export ("color")]
+        UIColor Color { get; }
+
+        [Export ("description")]
+        string DataDescription { get; }
+    }
+
+    [BaseType (typeof (UIView))]
+    public partial interface PNPieChart {
+
+        [Export ("initWithFrame:items:")]
+        IntPtr Constructor(RectangleF frame, PNPieChartDataItem[] items);
+
+        [Export ("items")]
+        PNPieChartDataItem[] Items { get; }
+
+        [Export ("descriptionTextFont")]
+        UIFont DescriptionTextFont { get; set; }
+
+        [Export ("descriptionTextColor")]
+        UIColor DescriptionTextColor { get; set; }
+
+        [Export ("descriptionTextShadowColor")]
+        UIColor DescriptionTextShadowColor { get; set; }
+
+        [Export ("descriptionTextShadowOffset")]
+        SizeF DescriptionTextShadowOffset { get; set; }
+
+        [Export ("duration")]
+        double Duration { get; set; }
+
+        [Export ("strokeChart")]
+        void StrokeChart ();
+    }
 }
 

@@ -10,7 +10,9 @@ namespace PNChart {
         public static readonly UIColor Green         = UIColor.FromRGBA(77 / 255f, 186 / 255f, 122 / 255f, 1f);
         public static readonly UIColor TitleColor    = UIColor.FromRGBA(0 / 255f, 189 / 255f, 113 / 255f, 1f);
         public static readonly UIColor ButtonGrey    = UIColor.FromRGBA(141 / 255f, 141 / 255f, 141 / 255f, 1f);
+        public static readonly UIColor LightGreen    = UIColor.FromRGBA(77 / 255f, 216 / 255f, 122 / 255f, 1f);
         public static readonly UIColor FreshGreen    = UIColor.FromRGBA(77 / 255f, 196 / 255f, 122 / 255f, 1f);
+        public static readonly UIColor DeepGreen     = UIColor.FromRGBA(77 / 255f, 176 / 255f, 122 / 255f, 1f);
         public static readonly UIColor Red           = UIColor.FromRGBA(245 / 255f, 94 / 255f, 78 / 255f, 1f);
         public static readonly UIColor Mauve         = UIColor.FromRGBA(88 / 255f, 75 / 255f, 103 / 255f, 1f);
         public static readonly UIColor Brown         = UIColor.FromRGBA(119 / 255f, 107 / 255f, 95 / 255f, 1f);
