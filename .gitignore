@@ -64,3 +64,6 @@ packages
 *.pidb
 *.userprefs
 *.dll.mdb
+
+# Jetbrains
+.idea
